@@ -3,14 +3,16 @@ const app = express()
 
 const port = process.env.PORT || 3000
 
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
 app.get('/', (req, res) => {
   res.json({
     message: 'Welcome to the MQTT HTTP Bridge API',
   })
 })
 
-app.post('/mqtt/:cliend_id', (req, res) => {
-  const clientId = req.params.client_id
+app.post('/mqtt', (req, res) => {
   const topic = req.query.topic
   const message = req.query.message
   console.log(`Received MQTT message for client ${clientId} on topic ${topic}: ${message}`)

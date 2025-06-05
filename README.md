@@ -1,1 +1,12 @@
-https://70c5-102-88-109-57.ngrok-free.app
+https://mqtt-http.vercel.app/
+{"client_id":${clientid},"username":${username},"topic":${topic},"payload":${payload},"time":${time}}
+SELECT
+  payload,
+  clientid,
+  topic,
+  username,
+  timestamp as time
+FROM
+  "CleanEnv/#",
+  "$events/client_connected",
+  "$events/client_disconnected"
