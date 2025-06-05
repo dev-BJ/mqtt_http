@@ -1,12 +1,12 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
 
 app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return Response(content="Hello, World!", headers={"ngrok-skip-browser-warning": "true"})
 
-@app.post("/{topic}")
+@app.post("/mqtt_device")
 def post_message(topic: str, message: str):
     # Here you would typically publish the message to the MQTT broker
     print(f"Publishing message to topic {topic}: {message}")
