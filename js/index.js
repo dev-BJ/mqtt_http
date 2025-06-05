@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 
 app.post('/mqtt', (req, res) => {
   console.log('Received MQTT message:', req.body ?? "No body provided")
-  console.log('Payload', !!req.body.payload ? JSON.parse(req.body.payload) : {})
+  console.log('Payload', !!req.body.payload !== false ? JSON.parse(req.body.payload) : {})
   // console.log(`Received MQTT message for client ${clientId} on topic ${topic}: ${message}`)
   res.sendStatus(200)
 })
