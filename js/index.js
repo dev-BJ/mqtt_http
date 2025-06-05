@@ -12,9 +12,10 @@ app.get('/', (req, res) => {
   })
 })
 
-app.post('/mqtt', (req, res) => {
+app.post('/mqtt/:cientId', (req, res) => {
+  const clientId = req.params.cientId
   // const { topic, message, clientId } = req.body
-  console.log('Received MQTT message:', req.body)
+  console.log('Client ID', clientId, 'Received MQTT message:', req.body)
   // console.log(`Received MQTT message for client ${clientId} on topic ${topic}: ${message}`)
   res.sendStatus(200)
 })
