@@ -7,7 +7,7 @@
     "rewrites": [
         {
             "source": "/(.*)",
-            "destination": "dist/src/api"
+            "destination": "src/api"
         }
     ]
 }
