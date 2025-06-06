@@ -13,8 +13,8 @@ export const device_state = pgTable('device_state', {
     created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
 })
 
-export const DeviceStateSelectSchema = device_state.$inferSelect;
-export const DeviceStateInsertSchema = device_state.$inferInsert;
+export type DeviceStateSelectSchema = typeof device_state.$inferSelect;
+export type DeviceStateInsertSchema = typeof device_state.$inferInsert;
 
 export const payload = pgTable('payload', {
     id: serial('id').primaryKey().notNull(),
@@ -25,5 +25,5 @@ export const payload = pgTable('payload', {
     created_at: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
 })
 
-export const PayloadSelectSchema = payload.$inferSelect;
-export const PayloadInsertSchema = payload.$inferInsert;
+export type PayloadSelectSchema = typeof payload.$inferSelect;
+export type PayloadInsertSchema = typeof payload.$inferInsert;

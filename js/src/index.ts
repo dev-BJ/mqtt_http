@@ -1,6 +1,7 @@
 import express, {Request, Response} from 'express'
 import db from '../db'
-import { device_state, payload, DeviceStateInsertSchema, PayloadInsertSchema  } from '../db/schema'
+import { device_state, payload } from '../db/schema'
+import type {DeviceStateInsertSchema, PayloadInsertSchema} from '../db/schema'
 import { eq } from 'drizzle-orm'
 
 const test_db = db.execute('SELECT 1')
@@ -31,7 +32,7 @@ type RequestBodyType = {
   [key: string]: any; // Allows assigning null or any value to properties
 }
 
-type DeviceState = typeof DeviceStateInsertSchema & typeof PayloadInsertSchema
+type DeviceState = DeviceStateInsertSchema & PayloadInsertSchema
 
 const update_device_connection = (device_state: any, body: any, res: Response)=>{
   const check_if_client_exists = db.select({client_id: device_state.clientId}).from(device_state).where(eq(device_state.clientId, body.clientid))
@@ -67,7 +68,7 @@ const update_device_connection = (device_state: any, body: any, res: Response)=>
         console.log('Device state inserted successfully')
       }).catch((error) => {
         console.error('Error inserting device state:', error)
-        res.sendStatus(500)
+        res.sendStatus(500);
       })
     }
   }).catch((error) => {

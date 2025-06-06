@@ -3,12 +3,19 @@
         "target": "es6",
         "module": "commonjs",
         "strict": true,
-        "rootDir": "./",
+        "rootDir": ".",
         "outDir": "./dist",
-        "esModuleInterop": true,
-        // "baseUrl": ".",
-        "paths": {
-            "@/*": ["./src/*"]
-        }
-    }
+        "esModuleInterop": true
+    },
+    "include": [
+        "./src/**/*",
+        "./db/**/*",
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "drizzle.config.ts",
+        "*.d.ts"
+    ],
+    "type":["node", "express", "node22"]
 }
