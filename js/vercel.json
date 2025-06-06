@@ -13,5 +13,5 @@
         }
     ],
     "installCommand": "npm install",
-    "outputDirectory": "dist/src"
+    "outputDirectory": "build"
 }

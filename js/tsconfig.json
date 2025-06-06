@@ -5,7 +5,7 @@
         "strict": true,
         // "rootDir": ".",
         "baseUrl": ".",
-        "outDir": "./dist",
+        "outDir": "./build",
         "esModuleInterop": true,
         "skipLibCheck": true,
     },
