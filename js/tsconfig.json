@@ -15,7 +15,6 @@
         "node_modules",
         "dist",
         "drizzle.config.ts",
-        "*.d.ts"
     ],
-    "type":["node", "express", "node22"]
+    // "types": ["node", "express", "node22"]
 }
