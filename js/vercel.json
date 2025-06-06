@@ -5,11 +5,11 @@
     "buildCommand": "npm run build",
     "installCommand": "npm install",
     "cleanUrls": true,
-    "redirects": [
+    "routes": [
         {
-            "source": "/(.*)",
-            "destination": "src/api",
-            "permanent": true
+            "src": "/(.*)",
+            "dest": "src/api/index.js",
+            "status": 200
         }
     ]
 }
