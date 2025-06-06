@@ -4,6 +4,14 @@
     "framework": null,
     "buildCommand": "npm run build",
     "installCommand": "npm install",
+    "cleanUrls": true,
+    "functions": {
+        "src/api/**/*": {
+            "runtime": "nodejs22.x",
+            "maxDuration": 10,
+            "memory": 512
+        }
+    },
     "rewrites": [
         {
             "source": "/(.*)",
