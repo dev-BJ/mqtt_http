@@ -8,6 +8,6 @@ wheels/
 
 # Virtual environments
 .venv
-
 /js/node_modules/
 data.json
+/js/.env
