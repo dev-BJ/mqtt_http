@@ -1,7 +1,7 @@
 import express, {Request, Response} from 'express'
-import db from '../db'
-import { device_state, payload } from '../db/schema'
-import type {DeviceStateInsertSchema, PayloadInsertSchema} from '../db/schema'
+import db from '../../db'
+import { device_state, payload } from '../../db/schema'
+import type {DeviceStateInsertSchema, PayloadInsertSchema} from '../../db/schema'
 import { eq } from 'drizzle-orm'
 
 const test_db = db.execute('SELECT 1')

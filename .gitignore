@@ -12,3 +12,4 @@ wheels/
 /js/node_modules/
 data.json
 /js/.env
+/js/.gitignore
